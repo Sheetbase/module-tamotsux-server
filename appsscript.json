@@ -1,0 +1,16 @@
+{
+  "timeZone": "Asia/Bangkok",
+  "dependencies": {
+	"libraries": [
+		{
+		  "userSymbol": "Polyfill",
+		  "libraryId": "1YGFR9Mv-chy7B419d-PrTX8a_Cwg2QWJM1g2qpgVzUNXJM1L5-0D77dC",
+		  "version": "1"
+		}
+	]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/spreadsheets"
+  ]
+}
