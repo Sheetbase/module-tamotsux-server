@@ -23,10 +23,10 @@ const AgentTable = Tamotsux.Table.define({ sheetName: 'Agents', spreadsheet: myS
 const FlowerTable = Tamotsux.Table.define({ sheetName: 'Flowers', spreadsheet: myOtherSpreadsheet });
 
 const firstAgent = AgentTable.first();
-const allFlower = FlowerTable.all();
+const allFlowers = FlowerTable.all();
 
 Logger.log(firstAgent);
-Logger.log(allFlower);
+Logger.log(allFlowers);
 ```
 
 ## License
