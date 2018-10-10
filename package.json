@@ -1,11 +1,17 @@
 {
 	"name": "@sheetbase/tamotsux-server",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Tamotsu ORM that support multiple sheets.",
-	"author": "Sheetbase",
-	"homepage": "https://sheetbase.net",
+	"author": "ITMammoth",
+	"homepage": "https://github.com/itmammoth/Tamotsu",
 	"license": "MIT",
+	"scripts": {
+		"build:code": "sheetbase-app-scripts build --vendor",
+		"build:readme": "sheetbase-app-scripts readme --no-docs",
+		"build": "npm run build:code && npm run build:readme",
+		"push": "sheetbase-app-scripts push"
+	},
 	"keywords": [
 		"google-apps-script",
 		"sheets",
@@ -20,10 +26,9 @@
 	"bugs": {
 		"url": "https://github.com/sheetbase/module-tamotsux-server/issues"
 	},
-	"dependencies": {
-		"@sheetbase/polyfill-server": "0.35.3"
-	},
+	"dependencies": {},
 	"devDependencies": {
+		"@sheetbase/app-scripts": "0.0.7",
 		"@types/google-apps-script": "0.0.28"
 	}
 }

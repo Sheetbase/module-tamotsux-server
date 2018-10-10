@@ -1,3 +1,17 @@
+var exports = exports || {};
+var module = module || { exports: exports };
+/**
+ * Sheetbase module
+ * Name: @sheetbase/tamotsux-server
+ * Export name: Tamotsux
+ * Description: Tamotsu ORM that support multiple sheets.
+ * Version: 0.0.2
+ * Author: ITMammoth
+ * Homepage: https://github.com/itmammoth/Tamotsu
+ * License: MIT
+ * Repo: https://github.com/sheetbase/module-tamotsux-server.git
+ */
+
 /**
  * Sheetbase Modifications
  * This file was modified by Sheetbase.
@@ -530,3 +544,6 @@
 }
 exports.TamotsuxModule = TamotsuxModule;
 /*</sheetbase>*/
+// add to the global namespace
+var proccess = proccess || this;
+proccess['Tamotsux'] = TamotsuxModule();

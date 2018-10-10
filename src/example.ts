@@ -1,12 +1,10 @@
-import { ITamotsuxModule } from './types/module';
+import { IModule } from './types/module';
 
-declare const tamotsuxModuleExports: {(): ITamotsuxModule};
-const tamotsux = tamotsuxModuleExports();
-const Tamotsux = tamotsux;
+var proccess = proccess || this;
+declare const TamotsuxModule: {(): IModule};
+const Tamotsux: IModule = proccess['Tamotsux'] || TamotsuxModule();
 
-export { tamotsux, Tamotsux };
-
-export function sheetbase_tamotsux_example1(): void {
+export function example1(): void {
 	const mySpreadsheet = SpreadsheetApp.openById('1Zz5kvlTn2cXd41ZQZlFeCjvVR_XhpUnzKlDGB8QsXoI');
 	Tamotsux.initialize();
 	const FooTable = Tamotsux.Table.define({ sheetName: 'foo', spreadsheet: mySpreadsheet });
@@ -14,7 +12,7 @@ export function sheetbase_tamotsux_example1(): void {
 	Logger.log(first);
 }
 
-export function sheetbase_tamotsux_example2(): void {
+export function example2(): void {
 	const mySpreadsheet = SpreadsheetApp.openById('1Zz5kvlTn2cXd41ZQZlFeCjvVR_XhpUnzKlDGB8QsXoI');
 	Tamotsux.initialize(mySpreadsheet); // dafault
 	const BarTable = Tamotsux.Table.define({ sheetName: 'bar'});

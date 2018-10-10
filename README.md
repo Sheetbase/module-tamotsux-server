@@ -1,36 +1,71 @@
-# Sheetbase Module: tamotsux-server
+# Sheetbase Module: @sheetbase/tamotsux-server
 
-A version of original Tomatsu library, that supports multiple Spreadsheets. See: https://github.com/itmammoth/Tamotsu
+Tamotsu ORM that support multiple sheets.
+
+<!-- <content> -->
+
+[![License][license_badge]][license_url] [![clasp][clasp_badge]][clasp_url] [![Support me on Patreon][patreon_badge]][patreon_url] [![PayPal][paypal_donate_badge]][paypal_donate_url] [![Ask me anything][ask_me_badge]][ask_me_url]
+
+<!-- </content> -->
 
 ## Install
 
-- NPM: ``$ npm install --save @sheetbase/tamotsux-server``
+- Using npm: `npm install --save @sheetbase/tamotsux-server`
 
-- As library: ``15fzNG5GZ7Ko6ygGYsMvthZLHovrc3eI_BEwFhwciOWVsBx47WCo13wvW`` (set Indentifier to **Tamotsux**, [view code](https://script.google.com/d/15fzNG5GZ7Ko6ygGYsMvthZLHovrc3eI_BEwFhwciOWVsBx47WCo13wvW/edit?usp=sharing))
+- As a library: `15fzNG5GZ7Ko6ygGYsMvthZLHovrc3eI_BEwFhwciOWVsBx47WCo13wvW`
 
-## Usage
+  Set the _Indentifier_ to **Tamotsux** and select the lastest version, [view code](https://script.google.com/d/15fzNG5GZ7Ko6ygGYsMvthZLHovrc3eI_BEwFhwciOWVsBx47WCo13wvW/edit?usp=sharing).
 
-Pass a parammeter of spreadsheet (the Spreadsheet Object) when define table.
+## Scopes
 
-If spreadsheet param not defined, the Spreadsheet in Tamotsu.initialize([Spreadsheet]) will be used.
+`https://www.googleapis.com/auth/spreadsheets`
+
+## Examples
 
 ```ts
-const mySpreadsheet = SpreadsheetApp.openById('1Jh316...');
-const myOtherSpreadsheet = SpreadsheetApp.openById('1Pl413...');
+function example1(): void {
+  const mySpreadsheet = SpreadsheetApp.openById(
+    "1Zz5kvlTn2cXd41ZQZlFeCjvVR_XhpUnzKlDGB8QsXoI"
+  );
+  Tamotsux.initialize();
+  const FooTable = Tamotsux.Table.define({
+    sheetName: "foo",
+    spreadsheet: mySpreadsheet
+  });
+  const first = FooTable.first();
+  Logger.log(first);
+}
 
-Tamotsux.initialize(mySpreadsheet); // init and set 'mySpreadsheet' as default
-const AgentTable = Tamotsux.Table.define({ sheetName: 'Agents', spreadsheet: mySpreadsheet });
-const FlowerTable = Tamotsux.Table.define({ sheetName: 'Flowers', spreadsheet: myOtherSpreadsheet });
-
-const firstAgent = AgentTable.first();
-const allFlowers = FlowerTable.all();
-
-Logger.log(firstAgent);
-Logger.log(allFlowers);
+function example2(): void {
+  const mySpreadsheet = SpreadsheetApp.openById(
+    "1Zz5kvlTn2cXd41ZQZlFeCjvVR_XhpUnzKlDGB8QsXoI"
+  );
+  Tamotsux.initialize(mySpreadsheet); // dafault
+  const BarTable = Tamotsux.Table.define({ sheetName: "bar" });
+  const all = BarTable.all();
+  Logger.log(all);
+}
 ```
+
+## Documentation
+
+Homepage: https://github.com/itmammoth/Tamotsu
 
 ## License
 
-[MIT][license-url]
+**@sheetbase/tamotsux-server** is released under the [MIT](https://github.com/sheetbase/module-tamotsux-server/blob/master/LICENSE) license.
 
-[license-url]: https://github.com/sheetbase/module-tamotsux-server/blob/master/LICENSE
+<!-- <footer> -->
+
+[license_badge]: https://img.shields.io/github/license/mashape/apistatus.svg
+[license_url]: https://github.com/sheetbase/module-tamotsux-server/blob/master/LICENSE
+[clasp_badge]: https://img.shields.io/badge/built%20with-clasp-4285f4.svg
+[clasp_url]: https://github.com/google/clasp
+[patreon_badge]: https://ionicabizau.github.io/badges/patreon.svg
+[patreon_url]: https://www.patreon.com/lamnhan
+[paypal_donate_badge]: https://ionicabizau.github.io/badges/paypal_donate.svg
+[paypal_donate_url]: https://www.paypal.me/lamnhan
+[ask_me_badge]: https://img.shields.io/badge/ask/me-anything-1abc9c.svg
+[ask_me_url]: https://m.me/sheetbase
+
+<!-- </footer> -->
