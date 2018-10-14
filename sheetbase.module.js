@@ -5,7 +5,7 @@ var module = module || { exports: exports };
  * Name: @sheetbase/tamotsux-server
  * Export name: Tamotsux
  * Description: Tamotsu ORM that support multiple sheets.
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: ITMammoth
  * Homepage: https://github.com/itmammoth/Tamotsu
  * License: MIT
@@ -544,6 +544,8 @@ var module = module || { exports: exports };
 }
 exports.TamotsuxModule = TamotsuxModule;
 /*</sheetbase>*/
-// add to the global namespace
-var proccess = proccess || this;
-proccess['Tamotsux'] = TamotsuxModule();
+// import { IModule } from '../index';
+// add 'Tamotsux' to the global namespace
+(function (process) {
+    process['Tamotsux'] = TamotsuxModule();
+})(this);

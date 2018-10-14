@@ -1,8 +1,6 @@
-import { IModule } from './types/module';
+import { TamotsuxModule } from '../index';
 
-var proccess = proccess || this;
-declare const TamotsuxModule: {(): IModule};
-const Tamotsux: IModule = proccess['Tamotsux'] || TamotsuxModule();
+const Tamotsux = TamotsuxModule();
 
 export function example1(): void {
 	const mySpreadsheet = SpreadsheetApp.openById('1Zz5kvlTn2cXd41ZQZlFeCjvVR_XhpUnzKlDGB8QsXoI');

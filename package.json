@@ -1,7 +1,6 @@
 {
 	"name": "@sheetbase/tamotsux-server",
-	"type": "module",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Tamotsu ORM that support multiple sheets.",
 	"author": "ITMammoth",
 	"homepage": "https://github.com/itmammoth/Tamotsu",
@@ -28,7 +27,7 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@sheetbase/app-scripts": "0.0.7",
+		"@sheetbase/app-scripts": "0.0.14",
 		"@types/google-apps-script": "0.0.28"
 	}
 }
