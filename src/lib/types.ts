@@ -6,10 +6,6 @@ export interface Model {
     isNewRecord(): boolean;
 }
 
-export interface TableType extends TableInstance {
-    define(classProperties: ClassProperties, instanceProperties?: InstanceProperties): TableType;
-}
-
 export interface TableInstance {
     first(): Model;
     last(): Model;

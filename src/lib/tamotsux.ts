@@ -1,5 +1,7 @@
 // tslint:disable:only-arrow-functions forin max-line-length
 
+import { ClassProperties, InstanceProperties } from './types';
+
 /**
  * Sheetbase Modifications
  * This file was modified by Sheetbase.
@@ -450,7 +452,7 @@ const createTable_ = function() {
     }},
   });
 
-  Table.define = function(classProps, instanceProps) {
+  Table.define = function(classProps: ClassProperties, instanceProps?: InstanceProperties) {
     const Parent = this;
     const Child = function() { return Parent.apply(this, arguments); };
     Object.assign(Child, Parent);
