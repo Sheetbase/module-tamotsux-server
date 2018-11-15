@@ -25,10 +25,6 @@ declare const TamotsuxModule: { Tamotsux: any };
 const Tamotsux = TamotsuxModule.Tamotsux;
 ```
 
-## Scopes
-
-`https://www.googleapis.com/auth/spreadsheets`
-
 ## Usage
 
 - Docs homepage: https://sheetbase.github.io/tamotsux-server
