@@ -1,3 +1,7 @@
+# ⛔️ DEPRECATED
+
+Not used anymore!
+
 # Sheetbase Module: @sheetbase/tamotsux-server
 
 Tamotsu ORM that support multiple sheets.
